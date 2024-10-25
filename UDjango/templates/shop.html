@@ -1,0 +1,29 @@
+{% extends "menu.html" %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+
+{% block pagename %}
+    {{ block.super }}
+    <h2>Магазин</h2>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <ul style="font-size: 20px">
+        {% for game in games %}
+            <li>{{ game.title }}
+                Описание:{{ game.description }}
+                Цена: {{ game.cost }}
+                <button style="font-size: 18px">Купить</button>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+{% endblock %}

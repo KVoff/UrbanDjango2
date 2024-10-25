@@ -2,15 +2,17 @@ from django.db import models
 
 
 class Buyer(models.Model):
+    objects = models.Manager()
     name = models.CharField(max_length=100)
-    balance = models.DecimalField(max_digits=10, decimal_places=2)
-    age = models.IntegerField(max_length=3)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    age = models.IntegerField()
 
     def __str__(self):
         return self.name
 
 
 class Game(models.Model):
+    objects = models.Manager()
     title = models.CharField(max_length=30)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     size = models.DecimalField(max_digits=10, decimal_places=2)

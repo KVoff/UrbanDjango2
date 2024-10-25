@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}field of wonders{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<header>
+    {% block pagename %}
+        <h1>Field of Wonders</h1>
+    {% endblock %}
+</header>
+<nav>
+    {% block menu %}
+        <p style="font-size: 20px">
+            <a href="{% url 'home' %}">Главная</a></p>
+        <p style="font-size: 20px">
+            <a href="{% url 'shop' %}">Магазин</a></p>
+        <p style="font-size: 20px">
+            <a href="{% url 'shoppingcart' %}">Корзина</a></p>
+    {% endblock %}
+</nav>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    {% block footer %}
+        <p>Django 2024</p>
+    {% endblock %}
+</footer>
+</body>
+</html>
